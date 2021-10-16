@@ -8,9 +8,9 @@
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide6.QtCore import *
-from PySide6.QtGui import *
-from PySide6.QtWidgets import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
 
 
 class Ui_QxntGui(object):
@@ -42,10 +42,9 @@ class Ui_QxntGui(object):
         self.stock_img = QLabel(self.centralwidget)
         self.stock_img.setObjectName(u"stock_img")
         self.stock_img.setMaximumSize(QSize(700, 350))
-        self.stock_img.setPixmap(QPixmap(u"../../Pictures/shutterstock_775889491.jpg"))
+        self.stock_img.setPixmap(QPixmap(u"../etc/stock_img.jpg"))
 
         self.gridLayout.addWidget(self.stock_img, 0, 2, 1, 1)
-
 
         self.gridLayout_2.addLayout(self.gridLayout, 1, 0, 1, 1)
 
@@ -57,10 +56,13 @@ class Ui_QxntGui(object):
         self.retranslateUi(QxntGui)
 
         QMetaObject.connectSlotsByName(QxntGui)
+
     # setupUi
 
     def retranslateUi(self, QxntGui):
-        QxntGui.setWindowTitle(QCoreApplication.translate("QxntGui", u"MainWindow", None))
+        QxntGui.setWindowTitle(
+            QCoreApplication.translate("QxntGui", u"MainWindow", None)
+        )
         self.stock_img.setText("")
-    # retranslateUi
 
+    # retranslateUi

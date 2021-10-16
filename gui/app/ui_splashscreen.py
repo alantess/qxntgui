@@ -8,9 +8,9 @@
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide6.QtCore import *
-from PySide6.QtGui import *
-from PySide6.QtWidgets import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
 
 
 class Ui_SplashScreen(object):
@@ -19,7 +19,7 @@ class Ui_SplashScreen(object):
             SplashScreen.setObjectName(u"SplashScreen")
         SplashScreen.resize(640, 451)
         icon = QIcon()
-        icon.addFile(u"../vigilantV2/etc/logo_light.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u"../etc/logo.png", QSize(), QIcon.Normal, QIcon.Off)
         SplashScreen.setWindowIcon(icon)
         self.centralwidget = QWidget(SplashScreen)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -28,12 +28,14 @@ class Ui_SplashScreen(object):
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.DropShadowFrame = QFrame(self.centralwidget)
         self.DropShadowFrame.setObjectName(u"DropShadowFrame")
-        self.DropShadowFrame.setStyleSheet(u"QFrame {\n"
-"	background-color: rgb(21, 34, 56);\n"
-"	color: rgb(189, 158, 217);\n"
-"border-radius:10px;\n"
-"\n"
-"}")
+        self.DropShadowFrame.setStyleSheet(
+            u"QFrame {\n"
+            "	background-color: rgb(21, 34, 56);\n"
+            "	color: rgb(189, 158, 217);\n"
+            "border-radius:10px;\n"
+            "\n"
+            "}"
+        )
         self.DropShadowFrame.setFrameShape(QFrame.StyledPanel)
         self.DropShadowFrame.setFrameShadow(QFrame.Raised)
         self.logo = QLabel(self.DropShadowFrame)
@@ -46,28 +48,30 @@ class Ui_SplashScreen(object):
         font.setBold(True)
         font.setItalic(True)
         self.logo.setFont(font)
-        self.logo.setPixmap(QPixmap(u"etc/logo.png"))
+        self.logo.setPixmap(QPixmap(u"../etc/logo.png"))
         self.logo.setScaledContents(True)
         self.logo.setAlignment(Qt.AlignCenter)
         self.progressBar = QProgressBar(self.DropShadowFrame)
         self.progressBar.setObjectName(u"progressBar")
         self.progressBar.setGeometry(QRect(40, 240, 551, 23))
-        self.progressBar.setStyleSheet(u"QProgressBar{\n"
-"\n"
-"	font: oblique 11pt \"Kinnari\";\n"
-"	color: rgb(15, 30, 56);\n"
-"	border-radius:10px;\n"
-"	border-style:none;\n"
-"text-align:center;\n"
-"}\n"
-"\n"
-"\n"
-"QProgressBar::chunk{\n"
-"	background-color: rgb(56, 26, 42);\n"
-"border-radius:10px;\n"
-"	\n"
-"\n"
-"}")
+        self.progressBar.setStyleSheet(
+            u"QProgressBar{\n"
+            "\n"
+            '	font: oblique 11pt "Kinnari";\n'
+            "	color: rgb(15, 30, 56);\n"
+            "	border-radius:10px;\n"
+            "	border-style:none;\n"
+            "text-align:center;\n"
+            "}\n"
+            "\n"
+            "\n"
+            "QProgressBar::chunk{\n"
+            "	background-color: rgb(56, 26, 42);\n"
+            "border-radius:10px;\n"
+            "	\n"
+            "\n"
+            "}"
+        )
         self.progressBar.setValue(24)
         self.loader_text = QLabel(self.DropShadowFrame)
         self.loader_text.setObjectName(u"loader_text")
@@ -91,11 +95,16 @@ class Ui_SplashScreen(object):
         self.retranslateUi(SplashScreen)
 
         QMetaObject.connectSlotsByName(SplashScreen)
+
     # setupUi
 
     def retranslateUi(self, SplashScreen):
-        SplashScreen.setWindowTitle(QCoreApplication.translate("SplashScreen", u"Vigilant Driving", None))
+        SplashScreen.setWindowTitle(
+            QCoreApplication.translate("SplashScreen", u"Vigilant Driving", None)
+        )
         self.logo.setText("")
-        self.loader_text.setText(QCoreApplication.translate("SplashScreen", u"Loading...", None))
-    # retranslateUi
+        self.loader_text.setText(
+            QCoreApplication.translate("SplashScreen", u"Loading...", None)
+        )
 
+    # retranslateUi
